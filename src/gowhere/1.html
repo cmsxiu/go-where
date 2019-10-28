@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="ip" />
+      <button id="btn">添加</button>
+      <ul id="list"></ul>
+    </div>
+    <script>
+      function Page() {}
+      $.extend(Page.prototype, {
+        init: function() {
+          this.bindEvents()
+        },
+        bindEvents: function() {
+          let btn = $('#btn')
+          btn.on('click', $.proxy(this.handleBtnClick, this))
+        },
+        handleBtnClick: function() {
+          var ip = $('#ip')
+          var inpVal = ip.val()
+          var ulItem = $('#list')
+          ulItem.append('<li>' + inpVal + '</li>')
+          ip.val('')
+        }
+      })
+      var page = new Page()
+      page.init()
+    </script>
+  </body>
+</html>
