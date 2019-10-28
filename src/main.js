@@ -22,6 +22,12 @@ import 'styles/iconfont.css';
 import fastClick from '../node_modules/fastclick/lib/fastclick'
 fastClick.attach(document.body)
 
+// 引入VueAwesomeSwiper
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+// require styles
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
